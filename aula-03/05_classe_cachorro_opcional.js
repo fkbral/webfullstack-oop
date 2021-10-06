@@ -11,7 +11,8 @@ class Dog {
 const dog1 = new Dog()
 const dog2 = new Dog({
   breed: 'poodle',
-},true,
+  castrated: true
+}
 )
 console.log(dog1)
 console.log(dog2)
