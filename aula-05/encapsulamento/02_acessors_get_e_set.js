@@ -7,7 +7,6 @@ class Circulo{
     this.#coresValidas = ['vermelho', 'azul', 'verde']
     this.raio = raio
     this.diametro = raio * 2
-
   }
   
   get cor() {
@@ -21,9 +20,11 @@ class Circulo{
 }
 
 const circulo1 = new Circulo(5)
+// dará erro em navegadores modernos com suporte a propriedades privadas
 // circulo1.#cor = 'verde'
 circulo1.cor = "rosa"
 
+// dará erro em navegadores modernos com suporte a propriedades privadas
 // console.log(circulo1.#cor)
 // console.log(circulo1.#nome)
 
