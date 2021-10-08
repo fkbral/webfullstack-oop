@@ -18,8 +18,14 @@ const pessoa = {
   },
 }
 
+console.log(pessoa.userName)
+console.log(pessoa.email)
 pessoa.userName = "lolo"
+console.log(pessoa.userName)
+console.log(pessoa.email)
+
 pessoa.idade = 30
+
 
 // pessoa
 console.log(pessoa.idade)
