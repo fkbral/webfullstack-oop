@@ -28,7 +28,7 @@ class Cidadao extends Pessoa {
   }
 }
 
-// Professor - NPS, numeroDeMateriasDadas, daFalta
+// Professor - NPS 0 a 100, numeroDeMateriasDadas 0 a n, daFalta(aluno)
 
 // Aluno - mediaDaMateriaAtual, numeroDeFaltas
 
