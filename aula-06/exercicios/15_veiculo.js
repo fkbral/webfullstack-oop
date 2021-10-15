@@ -34,11 +34,8 @@ class Veiculo {
 }
 
 class Bicicleta extends Veiculo {
-  #infantil
-
   constructor(rodas, usaCombustivel) {
     super(rodas, usaCombustivel)
-    this.#infantil = this.rodas > 2
   }
 
   get infantil () {
@@ -46,13 +43,49 @@ class Bicicleta extends Veiculo {
   }
 }
 
+class Carro extends Veiculo {
+  #tipoDecombustivel
+  #combustiveisPermitidos = ['gasolina', 'álcool', 'flex', 'elétrico']
+
+  constructor(rodas, usaCombustivel, tipoDecombustivel) {
+    super(rodas, usaCombustivel)
+    this.#tipoDecombustivel = this.#validaTipoDeCombustivel(tipoDecombustivel)
+  }
+
+  get tipoDecombustivel() {
+    return this.#tipoDecombustivel
+  }
+
+  set tipoDecombustivel(tipoDecombustivel) {
+    this.#tipoDecombustivel = this.#validaTipoDeCombustivel(tipoDecombustivel)
+  }
+
+  #validaTipoDeCombustivel(tipoDecombustivel) {
+    this.#tipoDecombustivel = 
+      this.#combustiveisPermitidos.includes(tipoDecombustivel)
+      ? tipoDecombustivel
+      : 'gasolina'
+
+    return this.#tipoDecombustivel
+  }
+}
+
 const veiculoGenerico = new Veiculo(2, false)
 console.log(veiculoGenerico.rodas)
+{
+  const bicicletaAdulta = new Bicicleta(2, false)
+  const bicicletaInfantil = new Bicicleta(4, false)
+  console.log(bicicletaAdulta.infantil)
+  console.log(bicicletaInfantil.infantil)
+  
+  // bicicletaInfantil.rodas = 2
+  bicicletaInfantil.infantil = false
+  console.log(bicicletaInfantil.infantil)
+}
 
-const bicicletaAdulta = new Bicicleta(2, false)
-const bicicletaInfantil = new Bicicleta(4, false)
-console.log(bicicletaAdulta)
-console.log(bicicletaInfantil.infantil)
+const gol = new Carro(4, true, 'gasolina')
+console.log(gol.tipoDecombustivel)
+gol.tipoDecombustivel = 'gnv'
+console.log(gol.tipoDecombustivel)
 
-// bicicletaInfantil.rodas = 2
-console.log(bicicletaInfantil.infantil)
+  
