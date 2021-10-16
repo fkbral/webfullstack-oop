@@ -72,16 +72,14 @@ class Carro extends Veiculo {
 
 const veiculoGenerico = new Veiculo(2, false)
 console.log(veiculoGenerico.rodas)
-{
-  const bicicletaAdulta = new Bicicleta(2, false)
-  const bicicletaInfantil = new Bicicleta(4, false)
-  console.log(bicicletaAdulta.infantil)
-  console.log(bicicletaInfantil.infantil)
-  
-  // bicicletaInfantil.rodas = 2
-  bicicletaInfantil.infantil = false
-  console.log(bicicletaInfantil.infantil)
-}
+const bicicletaAdulta = new Bicicleta(2, false)
+const bicicletaInfantil = new Bicicleta(4, false)
+console.log(bicicletaAdulta.infantil)
+console.log(bicicletaInfantil.infantil)
+
+// bicicletaInfantil.rodas = 2
+bicicletaInfantil.infantil = false
+console.log(bicicletaInfantil.infantil)
 
 const gol = new Carro(4, true, 'gasolina')
 console.log(gol.tipoDecombustivel)
