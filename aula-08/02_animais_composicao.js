@@ -42,10 +42,14 @@ const MixinVoa = (superClasse) => {
   }
 }
 
-const MixinAnda = (superClasse) => {
+function MixinAnda(superClasse) {
   return class extends superClasse {
     anda() {
       return `${this.especie} andou`
+    }
+
+    fazBarulho() {
+      return 'Grr'
     }
   }
 }
@@ -58,13 +62,19 @@ const MixinNada = (superClasse) => {
   }
 }
 
+class PassadorAndador extends MixinAnda(Animal) {}
+class Peixe extends MixinNada(Animal) {}
+
 class PassaroVoador extends MixinAnda(MixinVoa(Animal)) {}
-// class PassaroVoadorENadador extends MixinNada(MixinAnda(MixinVoa(Animal))) {}
-class PassaroVoadorENadador extends compoe(MixinNada, MixinVoa, MixinAnda)(Animal) {}
+class PassaroVoadorENadador extends MixinNada(MixinAnda(MixinVoa(Animal))) {}
+// class PassaroVoadorENadador extends compoe(MixinNada, MixinVoa, MixinAnda)(Animal) {}
 // class PassaroVoadorENadador extends MixinNada(PassaroVoador) {}
 // class PassaroVoador extends MixinVoa(Animal) {}
 
 {
+  const ema = new PassadorAndador('ema')
+  console.log(ema.anda())
+  console.log(ema.fazBarulho())
   const pomba = new PassaroVoador('pomba')
   console.log(pomba)
   console.log(pomba.fazBarulho())
