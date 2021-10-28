@@ -1,6 +1,7 @@
 class Stack {
   constructor() {
     this.length = 0
+    // poderiamos chamar nosso topo de lastIn no caso de pilhas
     this.top = null
   }
 
