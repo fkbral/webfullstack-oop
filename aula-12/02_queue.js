@@ -38,7 +38,7 @@ class Queue {
     this.firstIn = this.firstIn.next
   }
 
-  printStack() {
+  printQueue() {
     const valordosElementos = []
 
     let next = this.firstIn
