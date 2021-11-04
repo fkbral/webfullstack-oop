@@ -1,4 +1,4 @@
-class Queue {
+export class Queue {
   constructor() {
     this.length = 0
     this.firstIn = null
@@ -54,17 +54,17 @@ class Queue {
 const filaTeste = new Queue()
 
 filaTeste.push('primeiro')
-console.log(filaTeste.firstIn)
+// console.log(filaTeste.firstIn)
 filaTeste.push('segundo')
 // console.log(filaTeste.firstIn)
 filaTeste.push('terceiro')
 // console.log(filaTeste.firstIn)
 filaTeste.push('quarto')
 // console.log(filaTeste.firstIn)
-console.log(filaTeste.printStack())
+// console.log(filaTeste.printQueue())
 filaTeste.pop()
 filaTeste.pop()
-console.log(filaTeste.printStack())
+// console.log(filaTeste.printQueue())
 
 // filaTeste = ['primeiro', 'segundo', 'terceiro', 'quarto']
 // quando eu retirar elementos um a um de nossa fila o seguinte acontece:
